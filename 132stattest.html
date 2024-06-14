@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กกระบวนการทางสถิติ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+        .tabcontent h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>กระบวนการทางสถิติ</h1>
+
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'DataCollection')" id="defaultOpen">การเก็บรวบรวมข้อมูล</button>
+    <button class="tablinks" onclick="openTab(event, 'DataPresentation')">การนำเสนอข้อมูล</button>
+    <button class="tablinks" onclick="openTab(event, 'DataAnalysis')">การวิเคราะห์ข้อมูล</button>
+    <button class="tablinks" onclick="openTab(event, 'Interpretation')">การแปลความหมายและสรุปผลการวิเคราะห์ข้อมูล</button>
+</div>
+
+<div id="DataCollection" class="tabcontent">
+    <h2>การเก็บรวบรวมข้อมูล</h2>
+    <p>การเลือกตัวอย่าง (sampling)ซึ่งในกรณีของการเลือกตัวอย่างนี้จะมีประเด็นที่ต้องพึงระวังในเชิงวิชาการอยู่บ้าง เพื่อให้สามารถมั่นใจได้ว่าตัวอย่างที่สุ่มมาได้นั้นจะเป็นตัวแทนที่ดีของประชากร กล่าวคือ มีลักษณะที่สะท้อนลักษณะที่แท้จริงของประชากร เพื่อให้การนำข้อมูลที่ได้จากตัวอย่างไปใช้ในการพยากรณ์ลักษณะของประชากรมีความแม่นยำและน่าเชื่อถือ</p>
+    <h3>การวางแผนการเก็บรวบรวมข้อมูลของคุณ:</h3>
+    <ul>
+        <li>ตัดสินใจว่าคุณต้องการข้อมูลอะไร</li>
+        <li>สร้างแบบฟอร์มการเก็บรวบรวมข้อมูลที่ชัดเจนและกระชับ</li>
+        <li>หลีกเลี่ยงข้อผิดพลาดทั่วไป เช่น การเก็บข้อมูลที่ไม่จำเป็นหรือการใช้หมวดหมู่ที่กำหนดไม่ดี</li>
+    </ul>
+    <h3>ข้อผิดพลาดทั่วไป:</h3>
+    <ul>
+        <li>มักสร้างแบบฟอร์มการเก็บข้อมูลโดยไม่มีแผนที่ชัดเจน</li>
+        <li>การเก็บข้อมูลเชิงปริมาณในช่วงต่อเนื่องแต่ขอคำตอบเป็นหมวดหมู่</li>
+    </ul>
+    <h3>ตัวอย่าง:</h3>
+    <p>ไม่ถูกต้อง: "เลือกช่วงรายได้ของคุณ: 0 บาท - 10,000 บาท, 10,000 บาท - 20,000 บาท , ฯลฯ"</p>
+    <p>ถูกต้อง: "โปรดระบุรายได้ของคุณเป็นดอลลาร์"</p>
+</div>
+
+<div id="DataPresentation" class="tabcontent">
+    <h2>การนำเสนอข้อมูล</h2>
+    <p>ขั้นตอนนี้มิได้หมายถึงการสื่อสารให้ทราบเกี่ยวกับข้อมูลที่เก็บรวบรวมได้เท่านั้น แต่ยังรวมถึงการตรวจสอบความถูกต้อง สมบูรณ์ของข้อมูล การจัดระเบียบ เรียบเรียง แจงนับและประมวลผลในเบื้องต้น</p>
+    <ul>
+        <li>ใช้แผนภูมิและกราฟเพื่อทำให้ข้อมูลของคุณเข้าใจง่าย</li>
+        <li>เลือกประเภทของแผนภูมิที่เหมาะสมกับข้อมูลของคุณ (เช่น แผนภูมิแท่งสำหรับข้อมูลเชิงหมวดหมู่, ฮิสโตแกรมสำหรับข้อมูลเชิงปริมาณ)</li>
+    </ul>
+    <h3>ข้อผิดพลาดทั่วไป:</h3>
+    <ul>
+        <li>ใส่ข้อมูลมากเกินไปในแผนภูมิ</li>
+        <li>ใช้ประเภทของแผนภูมิที่ไม่เหมาะสมกับข้อมูล</li>
+    </ul>
+</div>
+
+<div id="DataAnalysis" class="tabcontent">
+    <h2>การวิเคราะห์ข้อมูล</h2>
+    <p>เป็นขั้นตอนที่มีข้อมูลที่ผ่านการจัดระเบียบเรียบร้อยแล้ว เป็นปัจจัยนำเข้า ซึ่งจะให้ผลลัพธ์ที่สามารถนำไปใช้บ่งบอกลักษณะของข้อมูล หรือพยากรณ์ลักษณะของประชากรได้ต่อไป ขั้นตอนนี้จึงเปรียบเสมือนหัวใจของกระบวนการทางสถิติซึ่งในกระบวนการวิเคราะห์ข้อมูลนี้ผู้วิเคราะห์ข้อมูลจะต้องมีความเข้าใจในลักษณะของข้อมูลและวัตถุประสงค์ที่ต้องการอย่างชัดเจน เพื่อจะได้สามารถเลือกระเบียบวิธีทางสถิติที่เหมาะสม</p>
+    <h3>เทคนิคทางสถิติพื้นฐาน:</h3>
+    <ul>
+        <li>สถิติเชิงพรรณนา (ค่าเฉลี่ย มัธยฐาน ฐานนิยม)</li>
+        <li>สถิติเชิงอนุมาน (ช่วงความเชื่อมั่น การทดสอบสมมติฐาน)</li>
+    </ul>
+    <h3>ข้อผิดพลาดทั่วไป:</h3>
+    <ul>
+        <li>การวิเคราะห์ข้อมูลโดยไม่มีสมมติฐานที่ชัดเจน</li>
+        <li>ใช้การวิเคราะห์ที่ซับซ้อนโดยไม่เข้าใจพื้นฐาน</li>
+    </ul>
+</div>
+
+<div id="Interpretation" class="tabcontent">
+    <h2>การแปลความหมายและสรุปผลการวิเคราะห์ข้อมูล</h2>
+    <p>ตีความผลการวิเคราะห์ของคุณเพื่อสร้างข้อสรุปที่มีความหมาย</p>
+    <h3>การสรุปข้อสรุป:</h3>
+    <ul>
+        <li>เชื่อมโยงผลลัพธ์กับสมมติฐาน</li>
+        <li>อภิปรายผลที่ได้จากของผลลัพธ์ของการวิเคราะห์เชิงสถิติ</li>
+    </ul>
+    <h3>ข้อผิดพลาดทั่วไป:</h3>
+    <ul>
+        <li>สรุปข้อสรุปโดยไม่มีหลักฐานเพียงพอ</li>
+        <li>ไม่คำนึงถึงข้อจำกัดของข้อมูล</li>
+    </ul>
+    <h3>ตัวอย่าง:</h3>
+    <p>ไม่ถูกต้อง: สรุปว่ารายได้ทำให้สุขภาพดีขึ้นจากการเชื่อมโยงเพียงอย่างเดียว</p>
+    <p>ถูกต้อง: แนะนำว่ามีความสัมพันธ์ระหว่างรายได้และสุขภาพ โดยพิจารณาปัจจัยอื่นๆ ที่เป็นไปได้</p>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
